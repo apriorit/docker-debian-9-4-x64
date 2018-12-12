@@ -8,9 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i -- 's/#deb-src/deb-src/g' /etc/apt/sources.list && sed -i -- 's/# deb-src/deb-src/g' /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade -y \
-&& apt-get install -y libssl-dev libcrypto++-dev uuid-dev libsnappy-dev build-essential cmake \
-libguestfs-dev libedit-dev libc6-dev-x32 libelf-dev \
-snapd git autoconf linux-headers-4.9.0-6-all linux-image-4.9.0-6-amd64
+&& apt-get install -y linux-headers-4.9.0-6-all linux-image-4.9.0-6-amd64
 
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 #*******************************************
